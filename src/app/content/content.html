@@ -1,0 +1,23 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav class="example-sidenav">
+    Jolly good!
+  </mat-sidenav>
+  <router-outlet name="popup"> </router-outlet>
+  <div class="example-sidenav-content">
+    <div class="filters">
+      <mat-card>
+        filters
+      </mat-card>
+    </div>
+    <div class="items">
+      <mat-card class="active" *ngFor="let item of response" (click)="clickItem(item)">
+      {{item.name}}
+      </mat-card>
+    </div>
+    <button class="bar" type="button" mat-mini-fab color="primary" (click)="sidenav.open()">
+      >
+    </button>
+  </div>
+
+</mat-sidenav-container>
+

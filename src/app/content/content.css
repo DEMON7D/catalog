@@ -1,0 +1,33 @@
+.example-container {
+  width: 100%;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+.items{
+  flex-direction: column;
+  padding: 20px;
+  flex-grow: 3;
+}
+.active:hover{
+  z-index: 9;
+  box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+.bar{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.filters{
+  flex-grow: 1;
+}

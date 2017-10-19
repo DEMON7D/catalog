@@ -1,0 +1,11 @@
+.item{
+  width: 100px;
+  height: 100px;
+
+}
+.card{
+  display: block;
+  max-width: 250px;
+  max-height: 150px;
+  margin: auto;
+}
