@@ -7,7 +7,7 @@
 .example-sidenav-content {
   display: flex;
   height: 100%;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -15,19 +15,37 @@
   padding: 20px;
 }
 .items{
+  justify-content: flex-end;
   flex-direction: column;
   padding: 20px;
-  flex-grow: 3;
+
+}
+.row{
+  display: flex;
+  flex-direction: row;
 }
 .active:hover{
   z-index: 9;
   box-shadow: 0 0 10px rgba(0,0,0,0.8);
 }
-.bar{
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 .filters{
-  flex-grow: 1;
+ padding-top: 60px;
+}
+.card{
+  display: block;
+  max-width: 250px;
+  max-height: 150px;
+  margin: auto;
+}
+.panel{
+  width: 350px;
+}
+.sliders{
+  padding-left: 5px;
+}
+.invisible{
+  display: none;
+}
+.load{
+  width: 100%;
 }

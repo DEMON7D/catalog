@@ -1,0 +1,28 @@
+.item{
+  width: 100px;
+  height: 100px;
+
+}
+.card{
+  display: block;
+  max-width: 250px;
+  max-height: 150px;
+  margin: auto;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+}
+.column{
+  flex-direction: column;
+}
+.tab{
+  height: 300px;
+}
+.wrap{
+  flex-wrap: wrap;
+}
+.title{
+  font-size: 20px;
+  margin-bottom: 20px;
+}

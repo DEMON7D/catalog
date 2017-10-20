@@ -1,0 +1,30 @@
+<div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title ><span >{{item.name}}</span></mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-tab-group>
+          <mat-tab label="Характеристики" >
+              <div class="tab row" >
+                <div>
+                  <img class="card" mat-card-mat-image src={{item.image[0]}}>
+                </div>
+                <div class="column">
+                  <div *ngFor="let charact of item.characteristic">{{charact.name}}: {{charact.value}}</div>
+                </div>
+              </div>
+          </mat-tab>
+          <mat-tab label="Фото">
+              <div class="wrap row">
+                <img *ngFor="let img of item.image"  class="card" mat-card-mat-image src={{img}}>
+              </div>
+          </mat-tab>
+        </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+
+  <button type="button" mat-raised-button
+          (click)="dialogRef.close()">Cancel</button>
+</div>
+

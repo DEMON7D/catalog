@@ -1,12 +1,13 @@
-<mat-toolbar color="primary">
-  <span>Application Title</span>
+<mat-toolbar color="primary" class="bar">
+  <button type="button" color="primary"  mat-raised-button>
+    Главная
+  </button>
 
-  <!-- This fills the remaining space of the current row -->
-  <span class="example-fill-remaining-space"></span>
 
-  <span>Right Aligned Text</span>
+
+
 </mat-toolbar>
-<content>
+<content [category]="category">
 
 </content>
 

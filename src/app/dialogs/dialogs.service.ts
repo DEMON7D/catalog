@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { DialogConfirmComponent } from './dialogConfirm/dialogConfirm.component';
 import { MatDialogRef, MatDialog } from '@angular/material';
-import {DialogItemComponent} from './dilogItem/dialogItem.component';
+import {DialogItemComponent} from './dialogItem/dialogItem.component';
+import {DialogCategoryComponent} from './dialogCategory/dialogCategory.component';
 
 @Injectable()
 export class DialogsService {
@@ -24,12 +25,24 @@ export class DialogsService {
   public item(item): Observable<boolean> {
 
     let dialogRef: MatDialogRef<DialogItemComponent>;
-    console.log("открыто");
+
     dialogRef = this.dialog.open(DialogItemComponent,
       { height: '70%', width: '70%'});
 
 
     dialogRef.componentInstance.item = item;
+
+    return dialogRef.afterClosed();
+  }
+
+  public category(category): Observable<boolean> {
+
+    let dialogRef: MatDialogRef<DialogCategoryComponent>;
+
+    dialogRef = this.dialog.open(DialogCategoryComponent,
+      { height: '70%', width: '70%'});
+
+    dialogRef.componentInstance.category = category;
 
     return dialogRef.afterClosed();
   }

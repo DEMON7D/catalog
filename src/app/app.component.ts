@@ -7,13 +7,7 @@ import {DialogsService} from './dialogs/dialogs.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public result: any;
+ constructor() { }
 
-  constructor(private dialogsService: DialogsService) { }
 
-  public openDialog() {
-    this.dialogsService
-      .confirm('Confirm Dialog', 'Are you sure you want to do this?')
-      .subscribe(res => this.result = res);
-  }
 }

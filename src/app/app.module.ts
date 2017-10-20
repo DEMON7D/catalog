@@ -5,6 +5,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCardModule, MatCheckboxModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material';
 import {MatSidenavModule} from '@angular/material';
+import {MatExpansionModule} from '@angular/material';
+import {MatSliderModule} from '@angular/material';
+import {MatSelectModule} from '@angular/material';
 import {HomeComponent} from './home/home.component';
 import 'hammerjs';
 import 'rxjs/Rx';
@@ -41,6 +44,9 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
     DialogsModule,
+    MatExpansionModule,
+    MatSliderModule,
+    MatSelectModule,
   ],
   exports: [
     MatButtonModule,
@@ -48,6 +54,9 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatSidenavModule,
     MatCardModule,
+    MatExpansionModule,
+    MatSliderModule,
+    MatSelectModule,
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

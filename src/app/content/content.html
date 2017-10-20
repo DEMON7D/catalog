@@ -1,23 +1,46 @@
-<mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav class="example-sidenav">
-    Jolly good!
-  </mat-sidenav>
+
   <router-outlet name="popup"> </router-outlet>
   <div class="example-sidenav-content">
-    <div class="filters">
-      <mat-card>
-        filters
-      </mat-card>
+    <div class="filters" [ngClass]="{invisible: !response}">
+      <mat-expansion-panel class="panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Фильтры
+          </mat-panel-title>
+          <mat-panel-description>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+          <div class="sliders">
+            <mat-slider></mat-slider>
+
+            <mat-slider></mat-slider>
+          </div>
+            <mat-form-field>
+              <mat-select placeholder="Категории">
+                <mat-option *ngFor="let cat of category" [value]="cat.name">
+                  {{ cat.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+        <button type="button" mat-button>
+          Сброс
+        </button>
+      </mat-expansion-panel>
     </div>
     <div class="items">
-      <mat-card class="active" *ngFor="let item of response" (click)="clickItem(item)">
-      {{item.name}}
+      <mat-card class="active" *ngFor="let item of items" (click)="clickItem(item)">
+        <mat-card-header>
+          <mat-card-title>{{item.name}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="row">
+          <img class="card" mat-card-mat-image src={{item.image[0]}}>
+          {{item.description}}
+        </mat-card-content>
       </mat-card>
+      <button [class.invisible]="isOf()" (click)="load()" class="load" type="button" mat-button >
+        Показать еще
+      </button>
     </div>
-    <button class="bar" type="button" mat-mini-fab color="primary" (click)="sidenav.open()">
-      >
-    </button>
   </div>
 
-</mat-sidenav-container>
 
